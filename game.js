@@ -90,7 +90,7 @@ function update() {
   });
 
   // 시간이 지날수록 화살 생성 빈도 증가
-  if (time % Math.max(20, 80 - time/10) === 0) spawnArrow();
+  if (time % Math.max(10, 80 - time/10) === 0) spawnArrow();
 }
 
 // 그리기
@@ -109,6 +109,15 @@ function draw() {
     ctx.drawImage(arrowImg, -a.size, -a.size, a.size * 2, a.size * 2);
     ctx.restore();
   });
+
+  ctx.save();
+  ctx.font = "bold 48px Arial";       // 글씨 크기
+  ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // 연한 검정색
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText((time/60).toFixed(1), canvas.width / 2, canvas.height / 2);
+  ctx.restore();
+
 }
 
 // 메인 루프
