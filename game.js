@@ -100,7 +100,7 @@ function update() {
   });
 
   // 시간이 지날수록 화살 생성 빈도 증가
-  if (time % Math.max(10, 80 - time/10) === 0) spawnArrow();
+  if (time % Math.max(15, 80 - time/10) === 0) spawnArrow();
 }
 
 // 그리기
@@ -143,5 +143,6 @@ gameLoop();
 restartBtn.addEventListener("click", () => {
   initGame();
 });
+
 
 
