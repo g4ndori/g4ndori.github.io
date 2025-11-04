@@ -30,6 +30,16 @@ canvas.addEventListener("mousemove", e => {
   player.y = e.clientY - rect.top;
 });
 
+//모바일에서 터치로 이동
+canvas.addEventListener("touchmove", e => {
+  e.preventDefault(); // 화면 스크롤 방지
+  const rect = canvas.getBoundingClientRect();
+  const touch = e.touches[0]; // 첫 번째 손가락
+  player.x = touch.clientX - rect.left;
+  player.y = touch.clientY - rect.top;
+}, { passive: false });
+
+
 // 충돌 판정
 function isColliding(p, a) {
   const dx = p.x - a.x;
@@ -133,3 +143,4 @@ gameLoop();
 restartBtn.addEventListener("click", () => {
   initGame();
 });
+
