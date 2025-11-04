@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #e0f0e0;
+  font-family: sans-serif;
+}
+
+canvas {
+  background: #f5fff5;
+  border: 2px solid #333;
+  cursor: pointer;
+}
+
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    flex-direction: column;
+    cursor: url('jw.png'), pointer;
+} */
+
+#gameOverScreen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255,255,255,0.9);
+  padding: 30px;
+  border: 2px solid #333;
+  text-align: center;
+  display: none; /* 처음엔 숨김 */
+}
