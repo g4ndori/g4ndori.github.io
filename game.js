@@ -94,7 +94,7 @@ function update() {
     a.y += a.dy;
     if (isColliding(player, a)) {
       gameOver = true;
-      finalTime.textContent = "생존 시간: " + (time/60).toFixed(1) + "초";
+      finalTime.textContent = "생존 시간: " + (time/60).toFixed(2) + "초";
       gameOverScreen.style.display = "block";
     }
   });
@@ -125,7 +125,7 @@ function draw() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; // 연한 검정색
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  ctx.fillText((time/60).toFixed(1), canvas.width / 2, canvas.height / 2);
+  ctx.fillText((time/60).toFixed(2), canvas.width / 2, canvas.height / 2);
   ctx.restore();
 
 }
@@ -143,4 +143,5 @@ gameLoop();
 restartBtn.addEventListener("click", () => {
   initGame();
 });
+
 
