@@ -73,7 +73,7 @@ function spawnArrow() {
   const dx = player.x - x;
   const dy = player.y - y;
   const len = Math.sqrt(dx * dx + dy * dy);
-  const speed = 3;
+  const speed = 5;
 
   arrows.push({
     x: x,
@@ -143,6 +143,7 @@ gameLoop();
 restartBtn.addEventListener("click", () => {
   initGame();
 });
+
 
 
 
